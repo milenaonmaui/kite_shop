@@ -1,0 +1,3 @@
+class KiteShop::Kite 
+
+end
