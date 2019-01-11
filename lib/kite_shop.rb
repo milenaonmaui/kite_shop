@@ -1,5 +1,7 @@
-require "kite_shop/version"
+require_relative "../lib/kite_shop/version"
+require 'nokogiri'
+require 'pry'
+require_relative "../lib/kite_shop/cli.rb"
 
-module KiteShop
-  # Your code goes here...
+module Kiteshop
 end
