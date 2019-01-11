@@ -1,5 +1,14 @@
 #!/usr/bin/env ruby
 
-require_relative "../lib/kite_shop.rb"
+require "bundler/setup"
+require "environment"
 
-Kiteshop::CLI.new.start
+# You can add fixtures and/or initialization code here to make experimenting
+# with your gem easier. You can also use a different console, if you like.
+
+# (If you use this, don't forget to add pry to your Gemfile!)
+# require "pry"
+# Pry.start
+require_relative "../lib/environment.rb"
+
+KiteShop::CLI.new.start
