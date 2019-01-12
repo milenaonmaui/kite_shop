@@ -9,10 +9,15 @@ class KiteShop::CLI
       #puts url
       #call scraper class with url
       scraper = KiteShop::Scraper.new(url)
+      #scraper class will generate new kite class
       scraper.scrape_products
       #binding.pry
-      #scraper class will generate new kite class
-    
+      list_kites
+      puts "Select a product number to view details:"
+      input = gets.strip.to_i - 1
+      selected_kite = KiteShop::Kite.all[input]
+      binding.pry
+      #puts "You selected #"
     end
 
     def list_kites

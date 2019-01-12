@@ -26,5 +26,10 @@ class KiteShop::Scraper
         end
     end
 
+    def scrape_details 
+        #array of lines - 36
+        self.get_page.css(".product-description ul li")
+    end
+
    
 end

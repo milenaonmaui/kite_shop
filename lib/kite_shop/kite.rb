@@ -6,7 +6,7 @@ class KiteShop::Kite
    def initialize(attr_hash)
     @name = attr_hash[:name]
     @price = attr_hash[:price]
-    @url = attr_hash[:link]
+    @url = "https://www.realwatersports.com" + attr_hash[:link]
     @@all << self
    end
 
