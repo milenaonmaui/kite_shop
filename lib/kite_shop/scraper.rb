@@ -10,9 +10,6 @@ class KiteShop::Scraper
     
     def scrape_products
         #returns an array of products
-        #name - arr[0].css(".productitem--title a").text.strip
-        #price - arr[0].css(".price--main").text.strip 
-        #arr[0].css("a").attribute("href").value
         prod_array = self.get_page.css(".productgrid--item-kite .productitem--info")
     
         prod_array.each do |product_card|
@@ -21,13 +18,13 @@ class KiteShop::Scraper
           :price => product_card.css(".price--main").text.strip,
           :link => product_card.css("a").attribute("href").value
           }
-          #binding.pry
-        kite = KiteShop::Kite.new(attributes)
+          attributes[:size]=@url[@url.length-2]
+          kite = KiteShop::Kite.new(attributes)
         end
+        binding.pry
     end
 
     def scrape_details(kite) 
-        #array of lines - 36
         page = self.get_page
         kite.price = page.css("div.price--main span.money").last.text.strip
         details = page.css(".product-description ul li").take(5)
