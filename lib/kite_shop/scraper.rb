@@ -26,9 +26,13 @@ class KiteShop::Scraper
         end
     end
 
-    def scrape_details 
+    def scrape_details(kite) 
         #array of lines - 36
-        self.get_page.css(".product-description ul li")
+        page = self.get_page
+        kite.price = page.css("div.price--main span.money").last.text.strip
+        details = page.css(".product-description ul li").take(5)
+        kite.details = details.collect {|detail| detail.text}
+        kite.details
     end
 
    

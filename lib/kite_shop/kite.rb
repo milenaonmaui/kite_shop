@@ -1,5 +1,5 @@
 class KiteShop::Kite 
-   attr_accessor :name, :price, :url
+   attr_accessor :name, :price, :url, :details
    @@all = []
    # TO DO: @@ all needs to be link a hash by size
    # see student roster by grade
