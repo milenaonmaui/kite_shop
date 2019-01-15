@@ -1,5 +1,5 @@
 class KiteShop::Kite 
-   attr_accessor :name, :price, :url, :details, :size
+   attr_accessor :name, :price, :url, :details, :size, :colors
    @@all = {}
    # TO DO: @@ all needs to be link a hash by size
    # see student roster by grade
@@ -16,4 +16,11 @@ class KiteShop::Kite
    def self.all(size)
     @@all[size]
    end
+
+   def print_colors
+    if @colors != []
+        puts "Colors:"
+        @colors.each {|color| puts "     #{color}"}
+    end
+    end
 end
